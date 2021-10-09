@@ -36,7 +36,7 @@ module.exports.upload = function upload(apikey, file) {
         if (response.body == '{"message":"ERR_INVALID_APIKEY","failed":true}')
             //Custom Error for Invalid API Key Gets Logged
             console.log('ERROR: Invalid API Key');
-            //Else Statement
+        //Else Statement
         else {
             //If No Error, Logs The URL
             console.log(response.body);
