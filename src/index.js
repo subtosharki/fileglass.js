@@ -4,7 +4,7 @@ const request = require('request');
 const fs = require('fs');
 
 //Making The Upload Function
-module.exports.upload = function upload(apikey, file) {
+module.exports.Upload = function Upload(apikey, file) {
     //Getting The Options For The Request
     var options = {
         //Method Of Request
@@ -46,8 +46,8 @@ module.exports.upload = function upload(apikey, file) {
     });
 };
 
-//Making The Fetch Function
-module.exports.fetch = function fetch(imagename) {
+//Making The Data Function
+module.exports.PhotoData = function PhotoData(imagename) {
     //Getting The Options For The Request
     var options = {
         //Method Of Request
@@ -62,7 +62,7 @@ module.exports.fetch = function fetch(imagename) {
         //Instead Of Giving A JSON Error For Invalid API Key It Will Log A Custom Error
         if (response.body == '{"message":"Not Found","failed":true}')
             //Custom Error for Invalid API Key Gets Logged
-            console.log('ERROR: Invalid Image Name');
+            console.log('ERROR: Invalid Image ID');
         //Else Statement
         else {
             //If No Error, Logs The URL
@@ -70,3 +70,5 @@ module.exports.fetch = function fetch(imagename) {
         }
     });
 };
+
+
