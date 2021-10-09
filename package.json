@@ -1,5 +1,5 @@
 {
-  "name": "fileglass",
+  "name": "fileglass.js",
   "version": "1.0.0",
   "description": "the offical unoffical javascript fileglass api wrapper",
   "main": "src/index.js",
