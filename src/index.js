@@ -6,7 +6,7 @@ const fs = require('fs');
 //Making The Upload Function
 module.exports.Upload = function Upload(apikey, file) {
     //Getting The Options For The Request
-    var options = {
+    let options = {
         //Method Of Request
         method: 'POST',
         //The API URL Plus API Key
@@ -31,23 +31,44 @@ module.exports.Upload = function Upload(apikey, file) {
         },
     };
     //Makes the Request
+    // request(options, function (error, response) {
+    //     //If There Is An Error In The JS Funtion, Such As Not Supplying A Parameter, It Will Log The Error
+    //     if (error) throw new Error(error);
+    //     //Instead Of Giving A JSON Error For Invalid API Key It Will Log A Custom Error
+    //     if (response.body == '{"message":"ERR_INVALID_APIKEY","failed":true}')
+    //         //Custom Error for Invalid API Key Gets Logged
+    //         console.log('ERROR 403: Invalid API Key');
+    //     else if (
+    //         response.body ==
+    //         '{"message":"ThrottleException: Too Many Requests,"failed":true}'
+    //     ) {
+    //         console.log('ERROR 429: You Are Being Rate Limited');
+    //     }
+    //     //Else Statement
+    //     else {
+    //         //If No Error, Logs The URL
+    //         console.log(response.body);
+    //     }
+    // });
+    //Makes the Request
     request(options, function (error, response) {
         //If There Is An Error In The JS Funtion, Such As Not Supplying A Parameter, It Will Log The Error
         if (error) throw new Error(error);
-        //Instead Of Giving A JSON Error For Invalid API Key It Will Log A Custom Error
-        if (response.body == '{"message":"ERR_INVALID_APIKEY","failed":true}')
+        //Instead Of Giving A JSON Error It Will Log A Custom Error
+        switch (response.body) {
+            //Custom Error for No API Key Gets Logged
+            case '{"message":"ERR_NO_APIKEY",failed:"true"}':
+                console.log('ERROR 403: No API Key Provided');
+                break;
             //Custom Error for Invalid API Key Gets Logged
-            console.log('ERROR 403: Invalid API Key');
-        else if (
-            response.body ==
-            '{"message":"ThrottleException: Too Many Requests,"failed":true}'
-        ) {
-            console.log('ERROR 429: You Are Being Rate Limited');
-        }
-        //Else Statement
-        else {
-            //If No Error, Logs The URL
-            console.log(response.body);
+            case '{"message":"ERR_INVALID_APIKEY",failed:"true"}':
+                console.log('ERROR 403: Invalid API Key');
+                break;
+            //Custom Error for Rate Limit Gets Logged
+            case '{"message":"ThrottleException: Too Many Requests,"failed":true}':
+                console.log('ERROR 429: You Are Being Rate Limited');
+            default:
+                console.log(response.body);
         }
     });
 };
@@ -55,24 +76,28 @@ module.exports.Upload = function Upload(apikey, file) {
 //Making The Data Function
 module.exports.PhotoData = function PhotoData(ImageID) {
     //Getting The Options For The Request
-    var options = {
+    let options = {
         //Method Of Request
         method: 'GET',
         //The API URL Plus The Image Name
         url: `https://api.file.glass/v3/upload/data/${ImageID}`,
     };
+
     //Makes the Request
     request(options, function (error, response) {
         //If There Is An Error In The JS Funtion, Such As Not Supplying A Parameter, It Will Log The Error
         if (error) throw new Error(error);
         //Instead Of Giving A JSON Error For Invalid Image ID It Will Log A Custom Error
-        if (response.body == '{"message":"Not Found","failed":true}')
-            //Custom Error for Invalid Image ID Gets Logged
-            console.log('ERROR: Invalid Image ID');
-        //Else Statement
-        else {
-            //If No Error, Logs The URL
-            console.log(response.body);
+        switch (response.body) {
+            //Custom Error For Invalid Image ID Gets Logged
+            case '{"message":"Not Found","failed":true}':
+                //Logs The Error
+                console.log('ERROR 404: Invalid Image ID');
+                break;
+            //If There Is No Error
+            default:
+                //Logs the Results To Console
+                console.log(response.body);
         }
     });
 };
