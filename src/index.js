@@ -47,21 +47,21 @@ module.exports.Upload = function Upload(apikey, file) {
 };
 
 //Making The Data Function
-module.exports.PhotoData = function PhotoData(imagename) {
+module.exports.PhotoData = function PhotoData(ImageID) {
     //Getting The Options For The Request
     var options = {
         //Method Of Request
         method: 'GET',
         //The API URL Plus The Image Name
-        url: `https://api.file.glass/v3/upload/data/${imagename}`,
+        url: `https://api.file.glass/v3/upload/data/${ImageID}`,
     };
     //Makes the Request
     request(options, function (error, response) {
         //If There Is An Error In The JS Funtion, Such As Not Supplying A Parameter, It Will Log The Error
         if (error) throw new Error(error);
-        //Instead Of Giving A JSON Error For Invalid API Key It Will Log A Custom Error
+        //Instead Of Giving A JSON Error For Invalid Image ID It Will Log A Custom Error
         if (response.body == '{"message":"Not Found","failed":true}')
-            //Custom Error for Invalid API Key Gets Logged
+            //Custom Error for Invalid Image ID Gets Logged
             console.log('ERROR: Invalid Image ID');
         //Else Statement
         else {
@@ -71,4 +71,28 @@ module.exports.PhotoData = function PhotoData(imagename) {
     });
 };
 
-
+//waiting to find what is needed to fetch user info
+// //Making The Data Function
+// module.exports.UserData = function UserData(UserID) {
+//     //Getting The Options For The Request
+//     var options = {
+//         //Method Of Request
+//         method: 'GET',
+//         //The API URL Plus The User ID
+//         url: `https://api.file.glass/v3/user/fetch/${UserID}`,
+//     };
+//     //Makes the Request
+//     request(options, function (error, response) {
+//         //If There Is An Error In The JS Funtion, Such As Not Supplying A Parameter, It Will Log The Error
+//         if (error) throw new Error(error);
+//         //Instead Of Giving A JSON Error For Invalid User ID It Will Log A Custom Error
+//         if (response.body == '{"message":"Not Found","failed":true}')
+//             //Custom Error for Invalid User ID Gets Logged
+//             console.log('ERROR: Invalid User ID');
+//         //Else Statement
+//         else {
+//             //If No Error, Logs The URL
+//             console.log(response.body);
+//         }
+//     });
+// };
