@@ -57,11 +57,11 @@ module.exports.Upload = function Upload(apikey, file) {
         //Instead Of Giving A JSON Error It Will Log A Custom Error
         switch (response.body) {
             //Custom Error for No API Key Gets Logged
-            case '{"message":"ERR_NO_APIKEY",failed:"true"}':
+            case '{"message":"ERR_NO_APIKEY","failed":true}':
                 console.log('ERROR 403: No API Key Provided');
                 break;
             //Custom Error for Invalid API Key Gets Logged
-            case '{"message":"ERR_INVALID_APIKEY",failed:"true"}':
+            case '{"message":"ERR_INVALID_APIKEY","failed":true}':
                 console.log('ERROR 403: Invalid API Key');
                 break;
             //Custom Error for Rate Limit Gets Logged
