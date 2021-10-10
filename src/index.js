@@ -30,26 +30,7 @@ module.exports.Upload = function Upload(apikey, file) {
             },
         },
     };
-    //Makes the Request
-    // request(options, function (error, response) {
-    //     //If There Is An Error In The JS Funtion, Such As Not Supplying A Parameter, It Will Log The Error
-    //     if (error) throw new Error(error);
-    //     //Instead Of Giving A JSON Error For Invalid API Key It Will Log A Custom Error
-    //     if (response.body == '{"message":"ERR_INVALID_APIKEY","failed":true}')
-    //         //Custom Error for Invalid API Key Gets Logged
-    //         console.log('ERROR 403: Invalid API Key');
-    //     else if (
-    //         response.body ==
-    //         '{"message":"ThrottleException: Too Many Requests,"failed":true}'
-    //     ) {
-    //         console.log('ERROR 429: You Are Being Rate Limited');
-    //     }
-    //     //Else Statement
-    //     else {
-    //         //If No Error, Logs The URL
-    //         console.log(response.body);
-    //     }
-    // });
+
     //Makes the Request
     request(options, function (error, response) {
         //If There Is An Error In The JS Funtion, Such As Not Supplying A Parameter, It Will Log The Error
