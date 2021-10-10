@@ -70,29 +70,3 @@ module.exports.PhotoData = function PhotoData(ImageID) {
         }
     });
 };
-
-//waiting to find what is needed to fetch user info
-// //Making The Data Function
-// module.exports.UserData = function UserData(UserID) {
-//     //Getting The Options For The Request
-//     var options = {
-//         //Method Of Request
-//         method: 'GET',
-//         //The API URL Plus The User ID
-//         url: `https://api.file.glass/v3/user/fetch/${UserID}`,
-//     };
-//     //Makes the Request
-//     request(options, function (error, response) {
-//         //If There Is An Error In The JS Funtion, Such As Not Supplying A Parameter, It Will Log The Error
-//         if (error) throw new Error(error);
-//         //Instead Of Giving A JSON Error For Invalid User ID It Will Log A Custom Error
-//         if (response.body == '{"message":"Not Found","failed":true}')
-//             //Custom Error for Invalid User ID Gets Logged
-//             console.log('ERROR: Invalid User ID');
-//         //Else Statement
-//         else {
-//             //If No Error, Logs The URL
-//             console.log(response.body);
-//         }
-//     });
-// };
