@@ -48,6 +48,7 @@ module.exports.Upload = function Upload(apikey, file) {
             //Custom Error for Rate Limit Gets Logged
             case '{"message":"ThrottleException: Too Many Requests,"failed":true}':
                 console.log('ERROR 429: You Are Being Rate Limited');
+            //If There Is No Error
             default:
                 console.log(response.body);
         }
@@ -72,12 +73,10 @@ module.exports.PhotoData = function PhotoData(ImageID) {
         switch (response.body) {
             //Custom Error For Invalid Image ID Gets Logged
             case '{"message":"Not Found","failed":true}':
-                //Logs The Error
                 console.log('ERROR 404: Invalid Image ID');
                 break;
             //If There Is No Error
             default:
-                //Logs the Results To Console
                 console.log(response.body);
         }
     });
