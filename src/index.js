@@ -49,7 +49,7 @@ module.exports.Upload = function Upload(apikey, file) {
             case '{"message":"ThrottleException: Too Many Requests,"failed":true}':
                 console.log('ERROR 429: You Are Being Rate Limited');
                 break;
-            //If There Is No Error
+            //If There Is No Error Responds With Body
             default:
                 console.log(response.body);
                 break;
