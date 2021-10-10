@@ -48,9 +48,11 @@ module.exports.Upload = function Upload(apikey, file) {
             //Custom Error for Rate Limit Gets Logged
             case '{"message":"ThrottleException: Too Many Requests,"failed":true}':
                 console.log('ERROR 429: You Are Being Rate Limited');
+                break;
             //If There Is No Error
             default:
                 console.log(response.body);
+                break;
         }
     });
 };
@@ -78,6 +80,7 @@ module.exports.PhotoData = function PhotoData(ImageID) {
             //If There Is No Error
             default:
                 console.log(response.body);
+                break;
         }
     });
 };
