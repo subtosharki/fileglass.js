@@ -1,6 +1,6 @@
 const request = require('request');
 
-module.exports.PhotoData = function PhotoData(ImageID) {
+module.exports.photoData = function photoData(ImageID) {
     let options = {
         method: 'GET',
         url: `https://api.file.glass/v3/upload/data/${ImageID}`,

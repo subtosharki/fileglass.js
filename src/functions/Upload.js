@@ -2,7 +2,7 @@ const request = require('request');
 const fs = require('fs');
 
 //Making The Upload Function
-module.exports.Upload = function Upload(apikey, file) {
+module.exports.upload = function upload(apikey, file) {
     let options = {
         method: 'POST',
         url: `https://api.file.glass/upload?access_key=${apikey}`,
