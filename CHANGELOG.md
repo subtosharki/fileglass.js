@@ -11,3 +11,4 @@ All notable changes to this project will be documented in this file.
 - PhotoData Function
 
 [0.1]: https://github.com/subtosharki/fileglass.js/releases/tag/0.1
+[0.2]: https://github.com/subtosharki/fileglass.js/releases/tag/0.2
