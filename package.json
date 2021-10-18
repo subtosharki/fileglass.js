@@ -1,12 +1,12 @@
 {
   "name": "fileglass.js",
-  "version": "1.0.0",
-  "description": "the offical unoffical javascript fileglass api wrapper",
+  "version": "0.1",
+  "description": "The Official Unofficial Fileglass API Wrapper",
   "main": "src/index.js",
   "directories": {
     "example": "examples"
   },
-  "repository": "git+https://github.com/subtosharki/fileglass-wrapper.git",
+  "repository": "git+https://github.com/subtosharki/fileglass.js.git",
   "keywords": [
     "fileglass",
     "file-glass",
@@ -16,9 +16,9 @@
   "author": "subtosharki",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/subtosharki/fileglass-wrapper/issues"
+    "url": "https://github.com/subtosharki/fileglass.js/issues"
   },
-  "homepage": "https://github.com/subtosharki/fileglass-wrapper#readme",
+  "homepage": "https://github.com/subtosharki/fileglass.jsr#readme",
   "dependencies": {
     "request": "^2.88.2"
   }
