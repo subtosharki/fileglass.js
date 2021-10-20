@@ -3,7 +3,7 @@ const fs = require('fs');
 const err = require('../Errors/Errors');
 
 module.exports.translate = function translate(apikey, file) {
-    var options = {
+    let options = {
         method: 'POST',
         url: `https://api.file.glass/v3/common/translation/upload?access_key=${apikey}`,
         headers: {},
