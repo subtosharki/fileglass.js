@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.3] - 10/20/2021
+### Added
+- Better Error System
+
 ## [0.2] - 10/18/2021
 ### Added
 - Translation File Upload
