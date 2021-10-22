@@ -22,7 +22,8 @@ module.exports.check = function check(body) {
             throw new Error('429 You Are Being Rate Limited');
             break;
         default:
-            console.log(body);
+            const result = JSON.parse(body);
+            console.log(result);
             break;
     }
 };
