@@ -1,3 +1,5 @@
 const fileglass = require('../../src/index');
 
-fileglass.photoData('ukqjgGHtqJ');
+const j = fileglass.photoData('ukqjgGHtqJ');
+
+console.log(j)
