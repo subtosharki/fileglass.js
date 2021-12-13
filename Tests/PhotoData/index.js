@@ -1,5 +1,5 @@
-const fileglass = require('../../src/index');
+const fileglass = require('../../dist/index');
 
-const j = fileglass.photoData('ukqjgGHtqJ');
-
-console.log(j)
+fileglass.photoData('ukqjgGHtqJ').then((j) => {
+    console.log(j);
+});

@@ -1,25 +1,31 @@
 {
-  "name": "fileglass.js",
-  "version": "0.1",
-  "description": "The Official Unofficial Fileglass API Wrapper",
-  "main": "src/index.js",
-  "directories": {
-    "example": "examples"
-  },
-  "repository": "git+https://github.com/subtosharki/fileglass.js.git",
-  "keywords": [
-    "fileglass",
-    "file-glass",
-    "api",
-    "wrapper"
-  ],
-  "author": "subtosharki",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/subtosharki/fileglass.js/issues"
-  },
-  "homepage": "https://github.com/subtosharki/fileglass.jsr#readme",
-  "dependencies": {
-    "request": "^2.88.2"
-  }
+    "name": "fileglass.js",
+    "version": "0.1",
+    "description": "The Official Unofficial Fileglass API Wrapper",
+    "main": "src/index.js",
+    "scripts": {
+        "Format": "npx prettier --write .",
+        "TS Watch": "tsc --watch"
+    },
+    "repository": "git+https://github.com/subtosharki/fileglass.js.git",
+    "keywords": [
+        "fileglass",
+        "file-glass",
+        "api",
+        "wrapper"
+    ],
+    "author": "subtosharki",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/subtosharki/fileglass.js/issues"
+    },
+    "homepage": "https://github.com/subtosharki/fileglass.jsr#readme",
+    "dependencies": {
+        "prettier": "^2.5.1",
+        "request": "^2.88.2"
+    },
+    "devDependencies": {
+        "@types/node": "^16.11.12",
+        "@types/request": "^2.48.7"
+    }
 }
